@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/deduct_budget">
+    {% for player in players %}
+    <div class="card">
+        <h2>{{ player.name }}</h2>
+        <p>Budget: ${{ player.base_price }}</p>
+        <div class="characters">
+            <h3>Characters:</h3>
+            <ul>
+                {% for character in player.characters %}
+                <li>{{ character }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <button type="submit" name="player_index" value="{{ loop.index0 }}">-50</button>
+    </div>
+    {% endfor %}
+    </form>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/general.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/player_card.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/owner.css') }}">
+
+    </head>
+    <body>
+        {% include 'header.html' %}
+
+        <players class="owner_card">
+
+            <div class="player">
+                <img class="logo" src="{{ url_for('static', filename=players[0].image_path) }}" alt="{{players[0].name}}">
+                <p class="player_name">
+                    {{ players[0].name }}
+                </p>
+                <div class="info">
+                    <p class="player_budget">
+                        Budget: {{ players[0].budget }} cr
+                    </p> 
+                </div>
+            </div>
+            <div class="own_player_grid">            
+                <p class="player_own">
+                    Player Own
+                </p>
+                {% for character in players[0].characters %}
+                <div class="card">
+                    <img src="{{ url_for('static', filename=character.image_path) }}" alt="{{character.name}}">
+                    <div class="info">
+                        <p class="player_name">
+                            {{ character.name }}
+                        </p>
+                        <p class="player_role">
+                            {{ character.role }}
+                        </p>
+                        <p class="player_bp">
+                            Base Price: {{character.base_price}}
+                        </p>
+                        <p class="player_own">
+                            Own By: {{character.owner}}
+                        </p>
+                        <p class="player_point">
+                            Points: {{character.performance_points}}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </players>
+        <players class="owner_card">
+        
+        <div class="player">
+            <img class="logo" src="{{ url_for('static', filename=players[1].image_path) }}" alt="{{players[1].name}}">
+            <p class="player_name">
+                {{ players[1].name }}
+            </p>
+            <div class="info">
+                <p class="player_budget">
+                    Budget: {{ players[1].budget }} cr
+                </p> 
+            </div>
+        </div>
+        <div class="own_player_grid">            
+            <p class="player_own">
+                Player Own
+            </p>
+            {% for character in players[1].characters %}
+            <div class="card">
+                <img src="{{ url_for('static', filename=character.image_path) }}" alt="{{character.name}}">
+                <div class="info">
+                    <p class="player_name">
+                        {{ character.name }}
+                    </p>
+                    <p class="player_role">
+                        {{ character.role }}
+                    </p>
+                    <p class="player_bp">
+                        Base Price: {{character.base_price}}
+                    </p>
+                    <p class="player_own">
+                        Own By: {{character.owner}}
+                    </p>
+                    <p class="player_point">
+                        Points: {{character.performance_points}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        </players>
+    </body>
+</html>

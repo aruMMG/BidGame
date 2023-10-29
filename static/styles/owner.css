@@ -1,0 +1,19 @@
+.owner_card {
+    display: grid;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+.own_player_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+}
+.player {
+    text-align: center;
+    padding-left: 150px;
+}
+.logo {
+    width: 150px;
+    height: 150px;
+}

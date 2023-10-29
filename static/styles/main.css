@@ -1,0 +1,89 @@
+.bid-start-button {
+    background-color: green;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%; /* This makes the button round */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+
+.player_area {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+
+.player0 {
+    text-align: center;
+    padding-right: 150px;
+    background-image: url('../csk_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    box-sizing: content-box;
+}
+.player1 {
+    text-align: center;
+    padding-left: 150px;
+    background-image: url('../srh_background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    box-sizing: content-box;
+}
+.bid_buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    padding-left: 150px;
+    padding-right: 150px;
+}
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+.bid_card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 150px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color: #f2f2f2;
+}
+.card img {
+    width: 100%;
+}
+.bid_card img {
+    width: 100%;
+}
+.plus-button {
+    background-color: green; /* Change to your preferred color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-right: 5px; /* Add spacing between buttons */
+}
+
+/* Style the "Withdraw" button */
+.withdraw-button {
+    background-color: red; /* Change to your preferred color */
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}

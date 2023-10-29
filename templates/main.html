@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/general.css') }}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <!-- Bidding zone -->
+    <players class="player_area">
+
+            <div class="player0">
+                <img class="logo" src="{{ url_for('static', filename=players[0].image_path) }}" alt="{{players[0].name}}">
+                <p class="player_name">
+                    {{ players[0].name }}
+                </p>
+                <div class="info">
+                    <p class="player_budget">
+                        Budget: {{ players[0].budget }} cr
+                    </p>
+                    <div class="bid_buttons">
+                        <form method="post" action="/bid_increase">
+                            <input type="hidden" name="button_clicked" value="False">
+                            <input type="hidden" name="bid_charecter_id" value="{{ bid_charecter.id }}">
+                            <input type="hidden" name="player_id" value="{{ players[0].id }}">
+                            <button type="submit" name="bid_continue" class="plus-button">+0.5 cr</button>
+                        </form>
+
+                        <form method="post" action="/bid_drop">
+                            <input type="hidden" name="button_clicked" value="True">
+                            <input type="hidden" name="bid_charecter_id" value="{{ bid_charecter.id }}">
+                            <input type="hidden" name="player_id" value="{{ players[0].id }}">
+                            <button type="submit" name="bid_drop" class="withdraw-button">Withdraw</button>
+                        </form>
+                    </div>    
+                        
+                    <p class="player_own">
+                        Player Own
+                    </p>
+                    {% for Owned_character in players[0].characters %}
+                    <p class="player_names">
+                        {{ Owned_character.name }}
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <div class="player1">
+                <img class="logo" src="{{ url_for('static', filename=players[1].image_path) }}" alt="{{players[0].name}}">
+                <p class="player_name">
+                    {{ players[1].name }}
+                </p>
+                <div class="info">
+                    <p class="player_budget">
+                        Budget: {{ players[1].budget }} cr
+                    </p>
+                    <div class="bid_buttons">
+                        <form method="post" action="/bid_increase">
+                            <input type="hidden" name="button_clicked" value="True">
+                            <input type="hidden" name="player_id" value="{{ players[1].id }}">
+                            <input type="hidden" name="bid_charecter_id" value="{{ bid_charecter.id }}">
+                            <button type="submit" name="bid_continue" class="plus-button">+0.5 cr</button>
+                        </form>
+    
+                        <form method="post" action="/bid_drop">
+                            <input type="hidden" name="button_clicked" value="True">
+                            <input type="hidden" name="bid_charecter_id" value="{{ bid_charecter.id }}">
+                            <input type="hidden" name="player_id" value="{{ players[1].id }}">
+                            <button type="submit" name="bid_drop" class="withdraw-button">Withdraw</button>
+                        </form>
+                    </div>
+                                     
+                    <p class="player_own">
+                        Player Own
+                    </p>
+                    {% for Owned_character in players[1].characters %}
+                    <p class="player_names">
+                        {{ Owned_character.name }}
+                    </p>
+                    {% endfor %}
+                </div>
+                </div>
+            </div>
+        <!-- Add more cards here as needed -->
+        {% if bid_charecter %}
+        <div class="bid_card">
+            <img src="{{ url_for('static', filename=bid_charecter.image_path) }}" alt="{{bid_charecter.name}}">
+            <div class="info">
+                <p class="player_name">
+                    {{ bid_charecter.name }}
+                </p>
+                <p class="player_role">
+                    {{ bid_charecter.role }}
+                </p>
+                <p class="player_bp">
+                    Base Price: {{bid_charecter.base_price}} cr
+                </p>
+                <p class="Current_price">
+                    Current_price: {{bid_charecter.current_price}} cr
+                </p>
+            </div>
+        </div>
+        {% else %}
+        <div>
+            <form method="post" action="/bid_start_button">
+                <input type="hidden" name="button_clicked" value="True">
+                <button type="submit" name="bid_start" class="bid-start-button">Start</button>
+            </form>
+        </div>
+        {% endif %}
+    </players>
+
+    
+
+</body>
+</html>

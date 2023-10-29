@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Player Name Forms</title>
+    <style>
+        .form-container {
+            display: flex;
+        }
+
+        .form {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        .form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="start_page">
+        <form method="POST" action="/start">
+            <h2>Player 0</h2>
+            <input type="text" name="player0_name" placeholder="Enter Player 0 Name" required>
+            <h2>Player 1</h2>
+            <input type="text" name="player1_name" placeholder="Enter Player 1 Name" required>
+            <button type="submit">Submit</button>
+        </form>
+</body>
+</html>

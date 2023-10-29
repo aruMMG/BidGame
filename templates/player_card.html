@@ -1,0 +1,37 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/general.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/header.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/player_card.css') }}">
+        </head>
+        <body>
+            {% include 'header.html' %}
+            <!-- Charecter zone -->
+        <card class="player_cards">
+            {% for character in character_pool.characters %}
+            <div class="card">
+                <img src="{{ url_for('static', filename=character.image_path) }}" alt="{{character.name}}">
+                <div class="info">
+                    <p class="player_name">
+                        {{ character.name }}
+                    </p>
+                    <p class="player_role">
+                        {{ character.role }}
+                    </p>
+                    <p class="player_bp">
+                        Base Price: {{character.base_price}}
+                    </p>
+                    <p class="player_own">
+                        Own By: {{character.owner}}
+                    </p>
+                    <p class="player_point">
+                        Points: {{character.performance_points}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </card>
+        </body>
+    </html>
+       
