@@ -83,7 +83,17 @@
                 </div>
             </div>
         <!-- Add more cards here as needed -->
-        {% if bid_charecter %}
+        
+        {% if bid_charecter == "finished" %}
+        <div class="cricbuzz_url">
+            <p>The bid character is finished.</p>
+            <form method="POST" action="/process_url">   
+                <h2>Paste URL</h2>
+                <input type="text" name="url" placeholder="https://example.com" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        {% elif bid_charecter %}
         <div class="bid_card">
             <img src="{{ url_for('static', filename=bid_charecter.image_path) }}" alt="{{bid_charecter.name}}">
             <div class="info">

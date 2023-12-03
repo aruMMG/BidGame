@@ -92,5 +92,17 @@
             {% endfor %}
         </div>
         </players>
+        {% if players_points %}
+        <div>
+            <tbody>
+                {% for player, score in players_points.items() %}
+                <tr>
+                    <td>{{ player }}</td>
+                    <td>{{ score }}</td>
+                </tr>
+            </tbody>
+            
+        </div>
+
     </body>
 </html>
