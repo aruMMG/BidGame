@@ -1,5 +1,5 @@
 # BidGame
-The owner will bid for players and create there own team. Based on their real game performance they will gain points. The owner with most points win.
+Bidgame is a multiplayer fantasy bidding game where users strategically bid for players, adding a unique twist to traditional player selection.
 
 # Current version
-The current version only include a single hard coded player list. However, it can expanded to collect schedule match information and add points to player during live match. 
+The current version only include hard coded player list and a link to match website for the palyers performance. Additionally it runs locally so both the player required to login from the same system. 
