@@ -15,19 +15,19 @@ The current version includes:
 
 ### Game Start Screen
 
-![Start Screen](assets/start_screen.png)
+![Start Screen](asset/start_screen.jpg)
 
 *Players choose their in-game names — shown here: `KnightRider` and `Sakuni`.*
 
 ### Bidding Screen
 
-![Bidding Screen](assets/bidding_screen.png)
+![Bidding Screen](asset/bidding_screen.jpg)
 
 *Live bidding interface where players bid for a fantasy player.*
 
 ### Available Player List
 
-![Player List](assets/player_list.png)
+![Player List](asset/player_list.jpg)
 
 *Shows the list of available players to help bidders plan their strategy.*
 
